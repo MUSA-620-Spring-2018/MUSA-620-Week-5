@@ -60,7 +60,7 @@ The final deliverable should include all of these items:
 
 ### Grading
 
-Your project will be graded will be graded on:
+Your project will be graded will on:
 - Completion of the map as described
 - Visual presentation (Does the map tell a clear story? Were the design choices well thought out and explained?)
 - Concept + analysis (Was the project well thought out? What trends stand out?)
