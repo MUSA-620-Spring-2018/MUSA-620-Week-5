@@ -56,7 +56,7 @@ If you have a preferred source of Census data, you are welcome collect the data 
 The final deliverable should include all of these items:
 - the map itself
 - all code used in the construction of the map
-- a written explanation of: the steps you took to create it, reasons for your design choices, and anything else you would like to add about what the map shows / what patterns you see.
+- a written explanation of: the steps you took to create it, reasons for your design choices, and any explanation of what the map shows / what patterns you see.
 
 ### Grading
 
