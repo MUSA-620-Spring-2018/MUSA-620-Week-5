@@ -21,7 +21,7 @@ This assignment is **required**. Please turn it in by email to myself (galkamaxd
 Using PostGIS spatial queries and the datasets below, create a map that examines a crime trend of your choice in Philadelphia at the level of street segments.
 
 - [10 years of Philadelphia crime](https://www.kaggle.com/mchirico/philadelphiacrimedata/version/19)
-- [Philadelpgia street segments](https://github.com/MUSA-620-Spring-2018/MUSA-620-Week-5/blob/master/STR_Centerline.zip)
+- [Philadelphia street segments](https://github.com/MUSA-620-Spring-2018/MUSA-620-Week-5/blob/master/STR_Centerline.zip)
 - The two datasets above are the only ones that are required. However if it improves the analysis or presentation, you may also wish to include [Philadelphia Census tracts](https://github.com/MUSA-620-Spring-2018/MUSA-620-Week-1/blob/master/census-tracts-philly.zip) or another polygon GIS data source.
 
 The crime dataset is quite large, so you should filter it down to a more specific sample depending on your topic of focus. Any topic is fair game, as long as the analysis involves at least 10,000 crime data points. Examples topics:
