@@ -14,7 +14,7 @@ Create a map that examines crime in Philadelphia at the street segment level.
 
 This assignment is **required**. Please turn it in by email to myself (galkamaxd at gmail) and Evan (ecernea at sas dot upenn dot edu).
 
-**Due:** 20-Feb before the start of class
+**Due:** ~~20-Feb before the start of class~~ Wednesday, 21-Feb by 9am
 
 ### Description
 
