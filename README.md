@@ -35,12 +35,12 @@ The methods for creating the map should follow roughly this path:
 - Make any necessary preparations to your tabular crime data: clean up columns, modify/add columns, remove NA/0 values, etc.
 - Use a spatial query to associate each crime with the nearest street segment.
 - Use another PostGIS query to join the aggregate crime data to each street segment.
-- Use ggmap to visualize the results in a clear, compelling way.
+- Use ggplot to visualize the results in a clear, compelling way.
 
-This assignment is not intended as a purely technical exercise. **You should give careful consideration to design choices and explain your choices in the project description**. The goal is for the map to tell as clear a "story" as possible.
+This assignment is not intended as a purely technical exercise. **You should give careful consideration to design choices and defend your choices in the project description**. The goal is for the map to tell as clear a "story" as possible.
 - Are the results best conveyed with color, line thickness, both?
 - Are you using an appropriate color scheme? Number of colors? Well chosen break points?
-- Does it include explanatory features (title, legend, etc) that make clear what you're looking at?
+- Does it include explanatory features (title, legend, etc) that make it clear for the viewer what they are looking at?
 
 In your writeup, please include a few lines about the thought process behind your design choices.
 
@@ -50,28 +50,21 @@ In order of importance, here are three things you can do to make spatial queries
 
 * **Create a spatial index on *all* of your spatial tables.** See the second to last example we went thru in class: `CREATE INDEX accidents_gix ON accidents USING GIST (wkb_geometry)`
 * **Add a distance restriction in your WHERE clause.** See the last example we went thru in class: `WHERE ST_Distance(a.wkb_geometry, p.wkb_geometry) < 1000`. The 1000 used here was arbitrary. I came up with that number by looking at the data in QGIS, changing the project CRS to "Mercator," and eyeballing how far off the accident coordinates are from the streets in Mercator coordinates. Have a look yourself. You can probably get away with a much smaller number.
-* **Cluster your spatial tables.** Essentially, this will rebuild the table so that geometries that near each other in space will be closer together on the disk. The effect will be minor, but it should make your queries marginally faster. A clustering query is very simple and takes this form: `CLUSTER accidents USING accidents_gix`
-
-### Data sources
-
-- [Philadelphia Census tracts shapefile/geojson](https://www.opendataphilly.org/dataset/census-tracts)
-- [Census ACS data portal](https://data2.nhgis.org/main)
-
-If you have a preferred source of Census data, you are welcome collect the data from there.
+* **Cluster your spatial tables.** Essentially, this will rebuild the table so that geometries that are near each other in space will be closer together on the disk. The effect will be minor, but it should make your queries marginally faster. A clustering query is very simple and takes this form: `CLUSTER accidents USING accidents_gix`
 
 ### Deliverable
 
 The final deliverable should include all of these items:
-- the map itself
+- the final map, as an image or PDF file
 - all code used in the construction of the map
-- a written explanation of: the steps you took to create it, reasons for your design choices, and any explanation of what the map shows / what patterns you see.
+- a written explanation of: the steps you took to create it, reasons for your design choices, and an explanation of what the map shows / what patterns you see.
 
 ### Grading
 
 Your project will be graded will on:
-- Completion of the map as described
+- Completion of the assignment as described
 - Visual presentation (Does the map tell a clear story? Were the design choices well thought out and explained?)
-- Concept + analysis (Was the project well thought out? What trends stand out?)
+- Concept + analysis (Was the project well thought out? What trends does it show? Did you identify anything that stands out?)
 
 Code will be checked for correctness, but will otherwise not be factored into the grade.
 
