@@ -44,7 +44,7 @@ This assignment is not intended as a purely technical exercise. **You should giv
 
 In your writeup, please include a few lines about the thought process behind your design choices.
 
-### [Tips for speeding up your queries](#queryspeed)
+### Tips for speeding up your queries <a id="queryspeed"></a>
 
 In order of importance, here are three things you can do to make spatial queries run faster:
 
