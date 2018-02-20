@@ -72,7 +72,7 @@ Code will be checked for correctness, but will otherwise not be factored into th
 
 As before, assigments that build upon the project description may receive extra credit, subject to prior approval. If you have an idea, please email me by the end of day Friday with your suggestion. Please be specific and include a link to any additional  dataset[s] you intend to use.
 
-### Troubleshooting PostGIS
+### Troubleshooting PostGIS <a id="troubleshooting"></a>
 
 If you are getting an error, I recommend following these steps in order:
 
@@ -81,7 +81,7 @@ If you are getting an error, I recommend following these steps in order:
 3. Go back to the code we went through in class and make sure you are using the right syntax.
 4. Generically, if you are getting an error and you are not sure what it means, try running the query in QGIS or PGAdmin. If it works, the problem is with R. If it doesn't work, the problem is with PostGIS. In this case, the error message you see in QGIS/PGAdmin will likely give you more information than the one you are seeing in R.
 5. Search for the error message in Google.
-6. Ask for help in Slack -- please include the full command that is causing the error as well as the full error message.
+6. Ask for help in Slack -- please include the command that is causing the error as well as the full error message.
 
 Other helpful PostGIS commands:
 * Add "EXPLAIN" before your SQL query to see the steps PostGIS will take to run it
