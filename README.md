@@ -80,10 +80,12 @@ If you are getting an error, I recommend following these steps in order:
 2. If you are seeing an error like this `RS-DBI driver: (could not Retrieve the result : ERROR:  column "wkb_geometry" of relation "accidentsInPhilly" already exists` you need to rename the your "wkb_geometry" column like this `accidentsInPhilly <- rename(accidentsInPhilly, oldgeom=wkb_geometry)`
 3. Go back to the code we went through in class and make sure you are using the right syntax.
 4. Generically, if you are getting an error and you are not sure what it means, try running the query in QGIS or PGAdmin. If it works, the problem is with R. If it doesn't work, the problem is with PostGIS. In this case, the error message you see in QGIS/PGAdmin will likely give you more information than the one you are seeing in R.
-5. Search for the error message in Google.
-6. Ask for help in Slack -- please include the command that is causing the error as well as the full error message.
+5. If the problem is with PostGIS, isolate which part of the query is causing the error. To do this, start with a very simple query that you know works (e.g. `SELECT * FROM tablename`) and progressively build back your original query by adding on pieces one-by-one. After each step, test whether the query still works.
+6. Search for the error message in Google.
+7. Ask for help in Slack -- please include the command that is causing the error as well as the full error message.
 
 Other helpful PostGIS commands:
+
 * Add "EXPLAIN" before your SQL query to see the steps PostGIS will take to run it
 * Add "EXPLAIN ANALYZE" before the query to see the steps PostGIS used and how long each of them took to run
 * Running `SELECT * FROM pg_stat_activity` will return a list of queries that you have run and will tell you which of them, if any, are still running
