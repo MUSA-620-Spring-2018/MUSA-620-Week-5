@@ -48,8 +48,8 @@ In your writeup, please include a few lines about the thought process behind you
 
 In order of importance, here are three things you can do to make spatial queries run faster:
 
-* **Create a spatial index on *all* of your spatial tables.** See the second to last example we went thru in class: `CREATE INDEX accidents_gix ON accidents USING GIST (wkb_geometry)`
-* **Add a distance restriction in your WHERE clause.** See the last example we went thru in class: `WHERE ST_Distance(a.wkb_geometry, p.wkb_geometry) < 1000`. The 1000 used here was arbitrary. I came up with that number by looking at the data in QGIS, changing the project CRS to "Mercator," and eyeballing how far off the accident coordinates are from the streets in Mercator coordinates. Have a look yourself. You can probably get away with a much smaller number.
+* **Create a spatial index on *all* of your spatial tables.** See the second to last example we went thru in class: `CREATE INDEX accidents_gix ON accidents USING GIST (wkb_geometry)`. If your query constraints involve non-spatial fields, it may also be helpful to create a standard (non-spatial) index, which you can do like this: `CREATE INDEX seg_id_idx ON accidents (seg_id)`.
+* **Add a distance restriction in your WHERE clause.** See the last example we went thru in class: `WHERE ST_Distance(a.wkb_geometry, p.wkb_geometry) < 1000`. The 1000 used here was arbitrary. I came up with that number by looking at the data in QGIS, changing the project CRS to "Mercator," and eyeballing how far off the crimes are from the streets in Mercator coordinates. Have a look yourself. You can probably get away with a much smaller number.
 * **Cluster your spatial tables.** Essentially, this will rebuild the table so that geometries that are near each other in space will be closer together on the disk. The effect will be minor, but it should make your queries marginally faster. A clustering query is very simple and takes this form: `CLUSTER accidents USING accidents_gix`
 
 ### Deliverable
@@ -84,7 +84,7 @@ If you are getting an error, I recommend following these steps in order:
 6. Search for the error message in Google.
 7. Ask for help in Slack -- please include the command that is causing the error as well as the full error message.
 
-Other helpful PostGIS commands:
+Other Postgres commands that we covered:
 
 * Add "EXPLAIN" before your SQL query to see the steps PostGIS will take to run it
 * Add "EXPLAIN ANALYZE" before the query to see the steps PostGIS used and how long each of them took to run
